@@ -9,7 +9,7 @@ function NavBar() {
             <div className="flex-1 md:flex md:items-center md:gap-12">
               <a className="block text-teal-300" href="/">
                 <span className="sr-only">Home</span>
-                <img src="public/favicon.ico" alt="logo" />
+                <img src="/favicon.ico" alt="logo" />
               </a>
             </div>
 
