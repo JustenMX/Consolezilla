@@ -7,7 +7,7 @@ function LandingPage() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img
-            src="src/assets/logo gif/GIF Consolezilla Logo v1.gif"
+            src="src/assets/logo_gif/gifLogo-v1.gif"
             loading="lazy"
             className="max-w-sm rounded-lg shadow-2xl hover:shadow-lg"
             alt="logo"
