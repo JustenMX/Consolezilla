@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Img from "react-cool-img";
+import SearchBar from "../components/SearchBar";
 
 function HomePage() {
   const [gameCards, setgameCards] = useState([]);
@@ -18,6 +19,7 @@ function HomePage() {
   return (
     <>
       <NavBar />
+      <SearchBar />
 
       {/* start header */}
       <div className="bg-white py-6 sm:py-8 lg:py-12">
