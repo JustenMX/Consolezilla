@@ -28,52 +28,34 @@ function NavBar() {
                       className="text-white transition hover:text-white/75"
                       href="/"
                     >
+                      Home
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-white/75"
+                      href="/"
+                    >
+                      Game Detials
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-white/75"
+                      href="/"
+                    >
+                      Genres
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-white/75"
+                      href="/"
+                    >
                       About
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Careers
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      History
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Services
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Projects
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-white/75"
-                      href="/"
-                    >
-                      Blog
                     </a>
                   </li>
                 </ul>

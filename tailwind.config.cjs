@@ -965,5 +965,9 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+  ],
 };
