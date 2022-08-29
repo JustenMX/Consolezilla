@@ -3,13 +3,15 @@ import "./main.css";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import GenresPage from "./pages/GenresPage";
+import ConsolePage from "./pages/ConsolePage";
 
 function App() {
   return (
     <>
-      {/* <GenresPage /> */}
-      <HomePage />
       {/* <LandingPage /> */}
+      {/* <HomePage /> */}
+      {/* <GenresPage /> */}
+      <ConsolePage />
     </>
   );
 }
