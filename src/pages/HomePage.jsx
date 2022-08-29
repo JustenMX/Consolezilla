@@ -14,13 +14,26 @@ function HomePage() {
       .then((data) => setgameCards(data));
   }, []);
 
-  //   if (!data) {
-  //     return <div>Loading...</div>;
-  //   }
-
   return (
     <>
       <NavBar />
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+          <p className="text-indigo-500 lg:text-lg font-semibold text-center mb-2 md:mb-3">
+            Home
+          </p>
+
+          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
+            Revolutionary way to build the web
+          </h2>
+
+          <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
+            This is a section of some simple filler text, also known as
+            placeholder text. It shares some characteristics of a real written
+            text but is random or otherwise generated.
+          </p>
+        </div>
+      </div>
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="flex justify-between items-end gap-4 mb-6">
@@ -72,6 +85,14 @@ function HomePage() {
               );
             })}
             {/* End of array map and render */}
+            <div className="flex justify-items-end   items-end gap-4 mb-6">
+              <a
+                href="#"
+                className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+              >
+                Show more
+              </a>
+            </div>
           </div>
         </div>
       </div>

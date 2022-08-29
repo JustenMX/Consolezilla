@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -70,7 +69,6 @@ function NavBar() {
                   </li>
 
                   <li>
-                    <Outlet />
                     <a
                       className="text-white transition hover:text-white/75"
                       href="/about"
