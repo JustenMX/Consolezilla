@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -26,7 +27,7 @@ function NavBar() {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/home"
                     >
                       Home
                     </a>
@@ -35,16 +36,16 @@ function NavBar() {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/games"
                     >
-                      Game Detials
+                      Game Page
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/genres"
                     >
                       Genres
                     </a>
@@ -53,7 +54,26 @@ function NavBar() {
                   <li>
                     <a
                       className="text-white transition hover:text-white/75"
-                      href="/"
+                      href="/consoles"
+                    >
+                      Platforms
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-white/75"
+                      href="/favs"
+                    >
+                      Favourites
+                    </a>
+                  </li>
+
+                  <li>
+                    <Outlet />
+                    <a
+                      className="text-white transition hover:text-white/75"
+                      href="/about"
                     >
                       About
                     </a>
