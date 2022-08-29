@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Img from "react-cool-img";
 
 function HomePage() {
@@ -17,10 +18,12 @@ function HomePage() {
   return (
     <>
       <NavBar />
+
+      {/* start header */}
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <p className="text-indigo-500 lg:text-lg font-semibold text-center mb-2 md:mb-3">
-            Home
+            <Link to="/home">Home</Link>
           </p>
 
           <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
@@ -34,6 +37,8 @@ function HomePage() {
           </p>
         </div>
       </div>
+      {/* end header */}
+
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="flex justify-between items-end gap-4 mb-6">
