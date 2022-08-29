@@ -6,7 +6,7 @@ import Img from "react-cool-img";
 
 function HomePage() {
   const [gameCards, setgameCards] = useState([]);
-  const getGameList = `https://api.rawg.io/api/games?key=a902fd0835d54afaa5e3a07c3f6dddac&page=1&page_size=100`;
+  const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=100`;
 
   useEffect(() => {
     fetch(getGameList)
@@ -56,12 +56,11 @@ function HomePage() {
                     </span>
                   </a>
                   <div>
-                    console.log(gameCards)
                     <a
                       href="#"
                       className="text-gray-500 hover:gray-800 lg:text-lg transition duration-100 mb-1"
                     >
-                      genre
+                      {r?.genres?.[0]?.name}
                     </a>
                     <div className="flex items-end gap-2">
                       <span className="text-gray-800 lg:text-lg font-bold">
