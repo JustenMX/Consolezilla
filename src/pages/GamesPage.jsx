@@ -30,7 +30,7 @@ function GamePage() {
                   src={gameDetail.background_image}
                   loading="lazy"
                   alt="RAWG Images"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center rounded-lg shadow-2xl hover:shadow-lg"
                 />
 
                 <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
@@ -54,7 +54,7 @@ function GamePage() {
                     Website
                   </a>
                   <a
-                    href={gameDetail.website}
+                    href={gameDetail.reddit_url}
                     className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 text-xl font-semibold transition duration-100 ml-2"
                   >
                     Reddit

@@ -6,12 +6,14 @@ function LandingPage() {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
-          <img
-            src="../logo_gif/gifLogo-v1.gif"
-            loading="lazy"
-            className="max-w-sm rounded-lg shadow-2xl hover:shadow-lg"
-            alt="logo"
-          />
+          <a href="/">
+            <img
+              src="../logo_gif/gifLogo-v1.gif"
+              loading="lazy"
+              className="max-w-sm rounded-lg shadow-2xl hover:shadow-lg"
+              alt="logo"
+            />
+          </a>
           <div>
             <h1 className="text-5xl text-emerald-800 font-bold">
               REVOLUTIONARY WAY TO LOVE GAMES
@@ -23,7 +25,9 @@ function LandingPage() {
               Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
               sem. Nulla consequat massa quis enim
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <a href="/home">
+              <button className="btn btn-primary">Get Started</button>
+            </a>
           </div>
         </div>
       </div>
