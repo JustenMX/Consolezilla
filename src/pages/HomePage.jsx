@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Img from "react-cool-img";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchengin } from "@fortawesome/free-brands-svg-icons";
@@ -38,12 +39,6 @@ function HomePage() {
           <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
             Revolutionary way to love your games!
           </h2>
-
-          <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-            This is a section of some text that I am supposed to write but i
-            have not gotten to it as I am in the midst of completing my project,
-            so maybe I will get back here and wrote something here.
-          </p>
         </div>
       </div> */}
       {/* end header */}
@@ -166,23 +161,27 @@ function HomePage() {
             {/* Start of array map and render */}
             {gameCards?.results?.map((r) => {
               return (
-                <div key={r.id}>
-                  <a
-                    href="#"
-                    className="group h-80 block bg-gray-100 rounded-lg overflow-hidden relative mb-2 lg:mb-3"
-                  >
+                <div
+                  key={r.id}
+                  className="group h-80 block bg-gray-100 rounded-lg overflow-hidden relative mb-2 lg:mb-3"
+                >
+                  {/* Link Starts Here */}
+                  <Link to={`/games/${r.id}`}>
+                    {console.log(r.id)}
+
                     <Img
                       src={r?.background_image}
                       key={r.id}
                       loading="lazy"
                       alt="game-background-image"
                       className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-200"
-                    />
+                    ></Img>
+                  </Link>
 
-                    <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
-                      {r?.rating} / 5
-                    </span>
-                  </a>
+                  <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
+                    {r?.rating} / 5
+                  </span>
+
                   <div>
                     <a
                       href="#"

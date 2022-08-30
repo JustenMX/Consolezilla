@@ -19,8 +19,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/home/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/games" element={<GamePage />} />
+          <Route path="/games/:id" element={<GamePage />} />
           <Route path="/genres" element={<GenresPage />} />
           <Route path="/consoles" element={<ConsolePage />} />
           <Route path="/favs" element={<FavPage />} />
