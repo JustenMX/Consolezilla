@@ -13,7 +13,9 @@ function LandingPage() {
             alt="logo"
           />
           <div>
-            <h1 className="text-5xl font-bold">WORK IN PROGRESS</h1>
+            <h1 className="text-5xl text-emerald-800 font-bold">
+              REVOLUTIONARY WAY TO LOVE GAMES
+            </h1>
             <p className="py-6">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque

@@ -1,9 +1,12 @@
 import React from "react";
 import Img from "react-cool-img";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 function AboutPage() {
   return (
     <>
+      <NavBar />
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -66,6 +69,7 @@ function AboutPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

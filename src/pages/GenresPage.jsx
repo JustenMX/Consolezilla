@@ -35,7 +35,7 @@ function GenresPage() {
               return (
                 <a
                   href="#"
-                  className="group h-48 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
+                  className="group h-20 md:h-40 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
                   key={r.id}
                 >
                   <Img

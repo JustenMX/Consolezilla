@@ -21,7 +21,7 @@ function ConsolePage() {
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="mb-10 md:mb-16">
             <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
-              Console List
+              Platforms
             </h2>
 
             <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
@@ -36,7 +36,7 @@ function ConsolePage() {
               return (
                 <a
                   href="#"
-                  className="group h-48 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
+                  className="group h-20 md:h-40 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
                   key={r.id}
                 >
                   <Img
