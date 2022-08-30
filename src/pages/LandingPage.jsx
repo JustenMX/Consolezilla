@@ -23,7 +23,7 @@ function LandingPage() {
               Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
               sem. Nulla consequat massa quis enim
             </p>
-            {/* <button className="btn btn-primary">Get Started</button> */}
+            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>
