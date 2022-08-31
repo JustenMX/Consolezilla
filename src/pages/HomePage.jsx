@@ -12,21 +12,7 @@ function HomePage() {
   const [title, setTitle] = useState("");
   const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12`;
 
-  const filterButtons = [
-    "action",
-    "Indie",
-    "RPG",
-    "Strategy",
-    "Shooter",
-    "Casual",
-    "Simulation",
-    "Playstation 4",
-    "Playstation 5",
-    "XBOX Series S/X",
-    "PC",
-  ];
-
-  console.log(filterButtons);
+  // Upon load to push into component
 
   useEffect(() => {
     fetch(getGameList)
@@ -34,12 +20,31 @@ function HomePage() {
       .then((data) => setgameCards(data));
   }, []);
 
+  // upon search (searchInput) to update useState and push into component
   const handleChange = (event) => {
     setTitle(event.target.value);
   };
 
   const handleSearch = () => {
     const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&search=${title}`;
+
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then((data) => setgameCards(data));
+  };
+
+  // upon clicking on filter genre buttons to update useState and push into component
+  const handleFilterGenre = (title) => {
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&genres=${title}`;
+
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then((data) => setgameCards(data));
+  };
+
+  // upon clicking on filter genre buttons to update useState and push into component
+  const handleFilterPlatforms = (title) => {
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&platforms=${title}`;
 
     fetch(searchURL)
       .then((response) => response.json())
@@ -53,6 +58,7 @@ function HomePage() {
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="flex justify-between items-end gap-4 mb-6"></div>
+
           {/* searchInput start */}
           <form onSubmit={handleSearch} className="m-6">
             <fieldset className="w-full space-y-1 dark:text-gray-100">
@@ -88,90 +94,100 @@ function HomePage() {
           </form>
           {/* search input ends */}
 
-          {/* filter buttons starts here */}
-          <div className="flex justify-start items-end gap-4 mb-6 flex-wrap">
+          {/* filter buttons Div starts here */}
+          <div className="flex justify-center items-end gap-4 mb-6 flex-wrap">
             {/* Filter Buttons */}
 
             <button
+              onClick={() => handleFilterGenre("action")}
               name="action"
-              className="inline-block bg-indigo-500 hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               ACTION
             </button>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            <button
+              onClick={() => handleFilterGenre("indie")}
+              name="indie"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               INDIE
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterGenre("racing")}
+              name="rpg"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
-              RPG
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+              RACING
+            </button>
+            <button
+              onClick={() => handleFilterGenre("strategy")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               STRATEGY
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterGenre("shooter")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               SHOOTER
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterGenre("casual")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               CASUAL
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterGenre("simulation")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               SIMULATION
-            </a>
+            </button>
           </div>
 
-          <div className="flex justify-start items-end gap-4 mb-6 flex-wrap">
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+          <div className="flex justify-center items-end gap-6 mb-8 flex-wrap">
+            <button
+              onClick={() => handleFilterPlatforms("18")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               PLAYSTATION 4
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterPlatforms("187")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               PLAYSTATION 5
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterPlatforms("186")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
               XBOX SERIES S/X
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+            </button>
+            <button
+              onClick={() => handleFilterPlatforms("4")}
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
-              PC
-            </a>
+              GAMING PC
+            </button>
           </div>
           {/* filter buttons ends here */}
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8">
             {/* Start of array map and render */}
             {gameCards?.results?.map((r) => {
-              console.log(r?.name);
               return (
                 <div
                   key={r.id}
-                  className="group h-80 block bg-gray-100 rounded-lg overflow-hidden relative mb-2 lg:mb-3"
+                  className="group h-80 block bg-gray-100 rounded-lg overflow-hidden relative mb-2 lg:mb-3 shadow-xl"
                 >
                   {/* Link Starts Here */}
                   <Link to={`/games/${r.id}`}>
@@ -184,7 +200,7 @@ function HomePage() {
                     ></Img>
                   </Link>
 
-                  <span className="bg-indigo-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
+                  <span className="bg-indigo-700 text-white text-sm font-semibold tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
                     {r?.name}
                   </span>
                 </div>
