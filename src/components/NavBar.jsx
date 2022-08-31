@@ -32,14 +32,14 @@ function NavBar() {
                     </a>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <a
                       className="text-white transition hover:text-white/75"
                       href="/games"
                     >
                       Game Page
                     </a>
-                  </li>
+                  </li> */}
 
                   <li>
                     <a

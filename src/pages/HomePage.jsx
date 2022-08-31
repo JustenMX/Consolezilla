@@ -12,6 +12,22 @@ function HomePage() {
   const [title, setTitle] = useState("");
   const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12`;
 
+  const filterButtons = [
+    "action",
+    "Indie",
+    "RPG",
+    "Strategy",
+    "Shooter",
+    "Casual",
+    "Simulation",
+    "Playstation 4",
+    "Playstation 5",
+    "XBOX Series S/X",
+    "PC",
+  ];
+
+  console.log(filterButtons);
+
   useEffect(() => {
     fetch(getGameList)
       .then((response) => response.json())
@@ -33,19 +49,10 @@ function HomePage() {
   return (
     <>
       <NavBar />
-      {/* start header */}
-      {/* <div className="bg-white py-4 sm:py-6 lg:py-10">
-        <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
-            Revolutionary way to love your games!
-          </h2>
-        </div>
-      </div> */}
-      {/* end header */}
-
       {/* div wrapper */}
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+          <div className="flex justify-between items-end gap-4 mb-6"></div>
           {/* searchInput start */}
           <form onSubmit={handleSearch} className="m-6">
             <fieldset className="w-full space-y-1 dark:text-gray-100">
@@ -84,12 +91,13 @@ function HomePage() {
           {/* filter buttons starts here */}
           <div className="flex justify-start items-end gap-4 mb-6 flex-wrap">
             {/* Filter Buttons */}
-            <a
-              href="#"
-              className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
+
+            <button
+              name="action"
+              className="inline-block bg-indigo-500 hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
             >
               ACTION
-            </a>
+            </button>
             <a
               href="#"
               className="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3"
@@ -154,12 +162,12 @@ function HomePage() {
               PC
             </a>
           </div>
+          {/* filter buttons ends here */}
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8">
-            {/* filter buttons ends here */}
-
             {/* Start of array map and render */}
             {gameCards?.results?.map((r) => {
+              console.log(r?.name);
               return (
                 <div
                   key={r.id}
@@ -167,8 +175,6 @@ function HomePage() {
                 >
                   {/* Link Starts Here */}
                   <Link to={`/games/${r.id}`}>
-                    {console.log(r.id)}
-
                     <Img
                       src={r?.background_image}
                       key={r.id}
@@ -178,23 +184,9 @@ function HomePage() {
                     ></Img>
                   </Link>
 
-                  <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
-                    {r?.rating} / 5
+                  <span className="bg-indigo-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
+                    {r?.name}
                   </span>
-
-                  <div>
-                    <a
-                      href="#"
-                      className="text-gray-500 hover:gray-800 lg:text-lg transition duration-100 mb-1"
-                    >
-                      {r?.genres?.[0]?.name}
-                    </a>
-                    <div className="flex items-end gap-2">
-                      <span className="text-gray-800 lg:text-lg font-bold">
-                        {r?.name}
-                      </span>
-                    </div>
-                  </div>
                 </div>
               );
             })}
