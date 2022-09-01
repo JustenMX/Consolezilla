@@ -10,7 +10,7 @@ import {
 function Footer() {
   return (
     <>
-      <footer className="bg-emerald-800">
+      <footer className="bg-emerald-800 dark:bg-emerald-900">
         <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="flex justify-center text-teal-300 sm:justify-start">
