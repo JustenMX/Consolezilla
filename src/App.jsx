@@ -9,6 +9,7 @@ import FavPage from "./pages/FavPage";
 import AboutPage from "./pages/AboutPage";
 import ErrorPage from "./pages/ErrorPage";
 import GenresImagePage from "./pages/GenresImagePage";
+import ConsoleImagePage from "./pages/ConsoleImagePage";
 // import NavBar from "./components/NavBar";
 // import Footer from "./components/Footer";
 import "./main.css";
@@ -26,7 +27,7 @@ function App() {
           <Route path="/genres" element={<GenresPage />} />
           <Route path="/genres/:slug" element={<GenresImagePage />} />
           <Route path="/consoles" element={<ConsolePage />} />
-          <Route path="/consoles/:id" element={<ConsolePage />} />
+          <Route path="/consoles/:id" element={<ConsoleImagePage />} />
           <Route path="/favs" element={<FavPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<ErrorPage />} />

@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 function ImageOutputConsolePage() {
   const [consoleList, setConsoleList] = useState([]);
   const [console, setConsole] = useState([]);
-  const getGenresList = `https://api.rawg.io/api/platforms?key=9165d834ffc64009b09c43f0a1ed0f67`;
+  const getConsoleList = `https://api.rawg.io/api/platforms?key=9165d834ffc64009b09c43f0a1ed0f67`;
 
   useEffect(() => {
-    fetch(getGenresList)
+    fetch(getConsoleList)
       .then((response) => response.json())
       .then((data) => setConsoleList(data));
   }, []);
@@ -25,7 +25,7 @@ function ImageOutputConsolePage() {
               className="group h-20 md:h-40 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
               key={r.id}
             >
-              <Link to={`/console/${r.id}`}>
+              <Link to={`/consoles/${r.id}`}>
                 <Img
                   key={r.id}
                   src={r?.image_background}
