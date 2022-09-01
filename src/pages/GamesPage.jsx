@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Img from "react-cool-img";
@@ -21,7 +21,7 @@ function GamePage() {
   return (
     <>
       <NavBar />
-      <div className="bg-white py-6 sm:py-8 lg:py-12">
+      <div className="bg-white dark:bg-slate-900 py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-lg px-4 md:px-8 mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -34,16 +34,41 @@ function GamePage() {
                 />
 
                 <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
-                  {gameDetail.rating}
+                  {gameDetail.rating} / 5
                 </span>
               </div>
-              {/* 
-              <div className="grid grid-cols-2 gap-4"></div> */}
+
+              <div className="grid grid-cols-2 gap-4">
+                <Img
+                  src={gameDetail.background_image}
+                  loading="lazy"
+                  alt="RAWG Images"
+                  className="w-full h-full object-cover object-center rounded-lg shadow-2xl hover:shadow-lg"
+                />
+                <Img
+                  src={gameDetail.background_image}
+                  loading="lazy"
+                  alt="RAWG Images"
+                  className="w-full h-full object-cover object-center rounded-lg shadow-2xl hover:shadow-lg"
+                />
+                <Img
+                  src={gameDetail.background_image}
+                  loading="lazy"
+                  alt="RAWG Images"
+                  className="w-full h-full object-cover object-center rounded-lg shadow-2xl hover:shadow-lg"
+                />
+                <Img
+                  src={gameDetail.background_image}
+                  loading="lazy"
+                  alt="RAWG Images"
+                  className="w-full h-full object-cover object-center rounded-lg shadow-2xl hover:shadow-lg"
+                />
+              </div>
             </div>
 
             <div className="md:py-8">
               <div className="mb-2 md:mb-3">
-                <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold mb-3">
+                <h2 className="text-gray-800 dark:text-slate-50 text-2xl lg:text-3xl font-bold mb-3">
                   {gameDetail.name}
                 </h2>
                 <div className="flex-col flex flex-wrap">
@@ -63,12 +88,9 @@ function GamePage() {
               </div>
 
               <div className="flex gap-2.5 mt-10">
-                <a
-                  href="/home"
-                  className="inline-block flex-1 sm:flex-none bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
-                >
-                  Go back
-                </a>
+                <button className="inline-block flex-1 sm:flex-none bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                  <Link to={`/home`}>Go back</Link>
+                </button>
 
                 <a
                   href="#"
@@ -84,11 +106,12 @@ function GamePage() {
                   </svg>
                 </a>
               </div>
+
               <div className="mt-8 md:mt-14 lg:mt-18">
-                <div className="text-gray-800 text-lg font-semibold mb-3">
+                <div className="text-gray-800 dark:text-slate-50 text-lg font-semibold mb-3">
                   Description
                 </div>
-                <div className="text-gray-500">
+                <div className="text-gray-500 dark:text-slate-50">
                   {gameDetail.description_raw}
                 </div>
               </div>

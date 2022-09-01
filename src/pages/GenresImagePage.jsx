@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Img from "react-cool-img";
+import PaginationGenre from "../components/PaginationGenre";
 
 function GenresImagePage() {
   const { slug } = useParams();
@@ -24,6 +25,10 @@ function GenresImagePage() {
         <h2 className="text-emerald-800 dark:text-indigo-600 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
           Genres: {slug}
         </h2>
+        <PaginationGenre
+          genreDetail={genreDetail}
+          setGenreDetail={setGenreDetail}
+        />
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="flex justify-between items-end gap-4 mb-6">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8">

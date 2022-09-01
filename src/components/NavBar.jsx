@@ -29,23 +29,23 @@ function NavBar() {
 
                 <ul className="flex items-center gap-6 text-sm">
                   <li className="text-slate-50 transition hover:text-white/75 font-semibold">
-                    <Link to={"/home"}>Home</Link>
+                    <Link to={`/home`}>Home</Link>
                   </li>
 
                   <li className="text-white transition hover:text-white/75 font-semibold">
-                    <Link to={"/genres"}>Genres</Link>
+                    <Link to={`/genres`}>Genres</Link>
                   </li>
 
                   <li className="text-white transition hover:text-white/75 font-semibold">
-                    <Link to={"/consoles"}>Consoles</Link>
+                    <Link to={`/consoles`}>Consoles</Link>
                   </li>
 
                   <li className="text-white transition hover:text-white/75 font-semibold">
-                    <Link to={"/favs"}>WatchList</Link>
+                    <Link to={`/favs`}>WatchList</Link>
                   </li>
 
                   <li className="text-white transition hover:text-white/75 font-semibold">
-                    <Link to={"/about"}>About</Link>
+                    <Link to={`/about`}>About</Link>
                   </li>
                 </ul>
               </nav>
