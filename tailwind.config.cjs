@@ -965,6 +965,7 @@ module.exports = {
     "active",
     "disabled",
   ],
+
   plugins: [
     require("daisyui"),
     require("@tailwindcss/typography"),
