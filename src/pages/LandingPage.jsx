@@ -6,28 +6,24 @@ function LandingPage() {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
-          <a href="/">
+          <a href="/home">
             <img
-              src="../logo_gif/gifLogo-v1.gif"
+              src="../LogoV1.png"
               loading="lazy"
-              className="max-w-sm rounded-lg shadow-2xl hover:shadow-lg"
+              className="max-w-xs hover:animate-spin px-4"
               alt="logo"
             />
           </a>
           <div>
-            <h1 className="text-5xl text-emerald-800 font-bold">
-              REVOLUTIONARY WAY TO LOVE GAMES
+            <h1 className="text-6xl text-emerald-800 dark:text-emerald-600 font-extrabold py-6">
+              WELCOME TO{" "}
+              <span className="text-indigo-700 hover:text-amber-500 hover:animate-pulse">
+                GAME
+              </span>
+              <span className="text-6xl text-indigo-700 hover:animate-pulse hover:text-7xl">
+                X
+              </span>
             </h1>
-            <p className="py-6">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim
-            </p>
-            <a href="/home">
-              <button className="btn btn-primary">Get Started</button>
-            </a>
           </div>
         </div>
       </div>
