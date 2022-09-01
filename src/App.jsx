@@ -28,7 +28,7 @@ function App() {
           <Route path="/consoles/:id" element={<ConsoleImagePage />} />
           <Route path="/favs" element={<FavPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/*" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
