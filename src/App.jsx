@@ -10,8 +10,6 @@ import AboutPage from "./pages/AboutPage";
 import ErrorPage from "./pages/ErrorPage";
 import GenresImagePage from "./pages/GenresImagePage";
 import ConsoleImagePage from "./pages/ConsoleImagePage";
-// import NavBar from "./components/NavBar";
-// import Footer from "./components/Footer";
 import "./main.css";
 
 function App() {
@@ -30,7 +28,7 @@ function App() {
           <Route path="/consoles/:id" element={<ConsoleImagePage />} />
           <Route path="/favs" element={<FavPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
