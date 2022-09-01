@@ -4,7 +4,7 @@ import React from "react";
 
 function FilterGenresHome({ gameCards, setgameCards, title, setTitle }) {
   const handleFilterGenre = (title) => {
-    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=40&genres=${title}`;
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=24&genres=${title}`;
 
     fetch(searchURL)
       .then((response) => response.json())

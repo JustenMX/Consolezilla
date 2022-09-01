@@ -12,7 +12,7 @@ import Img from "react-cool-img";
 function HomePage() {
   const [gameCards, setgameCards] = useState([]);
   const [title, setTitle] = useState("");
-  const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=40`;
+  const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=16`;
 
   // Upon load to push into component
 
@@ -38,8 +38,6 @@ function HomePage() {
             setTitle={setTitle}
           />
 
-          <PaginationHome gameCards={gameCards} setgameCards={setgameCards} />
-
           <FilterGenresHome
             gameCards={gameCards}
             setgameCards={setgameCards}
@@ -54,7 +52,10 @@ function HomePage() {
             setTitle={setTitle}
           />
 
+          <PaginationHome gameCards={gameCards} setgameCards={setgameCards} />
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8">
+            {/* .map() */}
             {gameCards?.results?.map((r) => {
               return (
                 <div
@@ -77,7 +78,7 @@ function HomePage() {
                 </div>
               );
             })}
-            {/* End of array map and render */}
+            {/* End of .map() */}
           </div>
         </div>
       </div>

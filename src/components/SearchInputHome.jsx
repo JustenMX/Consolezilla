@@ -10,7 +10,7 @@ function SearchInputHome({ gameCards, setgameCards, title, setTitle }) {
   };
 
   const handleSearch = () => {
-    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&search=${title}`;
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=24&search=${title}`;
 
     fetch(searchURL)
       .then((response) => response.json())

@@ -4,7 +4,7 @@ import React from "react";
 
 function FilterPlatformsHome({ gameCards, setgameCards, title, setTitle }) {
   const handleFilterPlatforms = (title) => {
-    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&platforms=${title}`;
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=24&platforms=${title}`;
 
     fetch(searchURL)
       .then((response) => response.json())
