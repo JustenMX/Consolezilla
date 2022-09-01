@@ -12,7 +12,7 @@ import Img from "react-cool-img";
 function HomePage() {
   const [gameCards, setgameCards] = useState([]);
   const [title, setTitle] = useState("");
-  const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=16`;
+  const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=24`;
 
   // Upon load to push into component
 
