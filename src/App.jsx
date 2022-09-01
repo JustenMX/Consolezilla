@@ -7,7 +7,7 @@ import GenresPage from "./pages/GenresPage";
 import ConsolePage from "./pages/ConsolePage";
 import FavPage from "./pages/FavPage";
 import AboutPage from "./pages/AboutPage";
-import ErrorPage from "./pages/ErrorPage";
+// import ErrorPage from "./pages/ErrorPage";
 import GenresImagePage from "./pages/GenresImagePage";
 import ConsoleImagePage from "./pages/ConsoleImagePage";
 import "./main.css";
@@ -28,7 +28,7 @@ function App() {
           <Route path="/consoles/:id" element={<ConsoleImagePage />} />
           <Route path="/favs" element={<FavPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<ErrorPage />} />
+          {/* <Route path="*" element={<ErrorPage />} /> */}
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
