@@ -1,21 +1,22 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 
 function PaginationHome({ gameCards, setgameCards }) {
   const [paginate, setPaginate] = useState(1);
-  const [pageCount, setpageCount] = useState(1);
-  const [count, setCount] = useState(24);
+  // const [pageCount, setpageCount] = useState(1);
+  // const [count, setCount] = useState(24);
 
   const PagePlus = () => {
     setPaginate(paginate + 1);
-    setpageCount(paginate + 1);
-    setCount(count * 2);
+    // setpageCount(paginate + 1);
+    // setCount(count * 2);
   };
 
   const PageMinus = () => {
     setPaginate(paginate - 1);
-    setpageCount(paginate - 1);
-    setCount(count / 2);
+    // setpageCount(paginate - 1);
+    // setCount(count / 2);
   };
 
   const handlePagination = () => {
@@ -33,7 +34,7 @@ function PaginationHome({ gameCards, setgameCards }) {
     <>
       <div className="flex justify-center items-end gap-6 mb-8 flex-wrap">
         <div className="flex flex-col items-center">
-          <span className="text-sm text-gray-700 dark:text-gray-400">
+          {/* <span className="text-sm text-gray-700 dark:text-gray-400">
             Showing{" "}
             <span className="font-semibold text-gray-900 dark:text-white">
               {pageCount}
@@ -47,7 +48,7 @@ function PaginationHome({ gameCards, setgameCards }) {
               {gameCards?.count}
             </span>{" "}
             Entries
-          </span>
+          </span> */}
           <div className="inline-flex mt-2 xs:mt-0">
             <button
               onClick={PageMinus}

@@ -11,7 +11,7 @@ function NavBar() {
               <a className="block text-teal-300" href="/">
                 <span className="sr-only">Home</span>
                 <img
-                  className="hover:animate-spin"
+                  className="hover:animate-spin w-12"
                   src="/favicon.ico"
                   alt="logo"
                 />
