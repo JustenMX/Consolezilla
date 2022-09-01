@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import Img from "react-cool-img";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchengin } from "@fortawesome/free-brands-svg-icons";
+import PaginationHome from "../components/PaginationHome";
+import SearchInputHome from "../components/SearchInputHome";
 
 function HomePage() {
   const [gameCards, setgameCards] = useState([]);
   const [title, setTitle] = useState("");
+  // const [count, setCount] = useState(0);
   const getGameList = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12`;
 
   // Upon load to push into component
@@ -19,19 +22,6 @@ function HomePage() {
       .then((response) => response.json())
       .then((data) => setgameCards(data));
   }, []);
-
-  // upon search (searchInput) to update useState and push into component
-  const handleChange = (event) => {
-    setTitle(event.target.value);
-  };
-
-  const handleSearch = () => {
-    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=1&page_size=12&search=${title}`;
-
-    fetch(searchURL)
-      .then((response) => response.json())
-      .then((data) => setgameCards(data));
-  };
 
   // upon clicking on filter genre buttons to update useState and push into component
   const handleFilterGenre = (title) => {
@@ -51,48 +41,30 @@ function HomePage() {
       .then((data) => setgameCards(data));
   };
 
+  const handleShowMore = (pagenum) => {
+    const searchURL = `https://api.rawg.io/api/games?key=9165d834ffc64009b09c43f0a1ed0f67&page=${pagenum}&page_size=12`;
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then((data) => setgameCards(data));
+  };
+
   return (
     <>
       <NavBar />
+
       {/* div wrapper */}
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="flex justify-between items-end gap-4 mb-6"></div>
 
-          {/* searchInput start */}
-          <form onSubmit={handleSearch} className="m-6">
-            <fieldset className="w-full space-y-1 dark:text-gray-100">
-              <label htmlFor="Search" className="hidden">
-                Search
-              </label>
-              <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                  <button
-                    onClick={handleSearch}
-                    type="button"
-                    title="search"
-                    className="p-1 focus:outline-none focus:ring"
-                  >
-                    <svg
-                      fill="currentColor"
-                      viewBox="0 0 512 512"
-                      className="w-4 h-4 dark:text-gray-100"
-                    >
-                      <FontAwesomeIcon icon={faSearchengin} />
-                    </svg>
-                  </button>
-                </span>
-                <input
-                  onChange={handleChange}
-                  type="search"
-                  name="Search"
-                  placeholder="Search..."
-                  className="py-2 pl-10 text-sm rounded-md sm:w-full first-letter:focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 focus:dark:border-violet-400"
-                />
-              </div>
-            </fieldset>
-          </form>
-          {/* search input ends */}
+          <SearchInputHome
+            gameCards={gameCards}
+            setgameCards={setgameCards}
+            title={title}
+            setTitle={setTitle}
+          />
+
+          <PaginationHome gameCards={gameCards} setgameCards={setgameCards} />
 
           {/* filter buttons Div starts here */}
           <div className="flex justify-center items-end gap-4 mb-6 flex-wrap">
@@ -179,11 +151,18 @@ function HomePage() {
               GAMING PC
             </button>
             <button
-              onClick={() => handleFilterPlatforms("/")}
+              onClick={() => handleShowMore(2)}
               name="action"
               className="inline-block bg-rose-700 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-normal text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
             >
-              SHOW MORE +
+              NEXT
+            </button>
+            <button
+              onClick={() => handleShowMore(1)}
+              name="action"
+              className="inline-block bg-rose-700 hover:bg-indigo-700 active:bg-indigo-900 focus-visible:ring ring-indigo-300 border text-slate-100 text-sm md:text-base font-normal text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3 shadow-xl"
+            >
+              PREVIOUS
             </button>
           </div>
           {/* filter buttons ends here */}
