@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -7,9 +8,10 @@ import Img from "react-cool-img";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-function GamePage() {
+function GamePage({ favs, setFavs }) {
   const { id } = useParams();
   const [gameDetail, setGameDetail] = useState({});
+
   const getGameDetails = `https://api.rawg.io/api/games/${id}?key=9165d834ffc64009b09c43f0a1ed0f67`;
 
   useEffect(() => {
@@ -17,6 +19,14 @@ function GamePage() {
       .then((response) => response.json())
       .then((data) => setGameDetail(data));
   }, []);
+
+  const handleFavs = () => {
+    const gamesNotInfavs =
+      favs.findIndex((index) => index.id === gameDetail.id) === -1;
+    gamesNotInfavs
+      ? setFavs([...favs, gameDetail])
+      : alert("Broooooo, you already have this game in your watchlist");
+  };
 
   return (
     <>
@@ -92,8 +102,8 @@ function GamePage() {
                   <Link to={`/home`}>Go back</Link>
                 </button>
 
-                <a
-                  href="#"
+                <button
+                  onClick={handleFavs}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3"
                 >
                   <svg
@@ -104,7 +114,7 @@ function GamePage() {
                   >
                     <FontAwesomeIcon icon={faHeart} />
                   </svg>
-                </a>
+                </button>
               </div>
 
               <div className="mt-8 md:mt-14 lg:mt-18">
