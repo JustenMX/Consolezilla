@@ -18,10 +18,7 @@ function LandingPage() {
             <h1 className="text-6xl text-emerald-800 dark:text-emerald-600 font-extrabold py-6">
               WELCOME TO{" "}
               <span className="text-indigo-700 hover:text-amber-500 hover:animate-pulse">
-                GAME
-              </span>
-              <span className="text-6xl text-indigo-700 hover:animate-pulse hover:text-7xl">
-                X
+                GAMEX
               </span>
             </h1>
           </div>
